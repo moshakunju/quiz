@@ -1,0 +1,3764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SBS Bible Quiz 2025 Result</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f9f9f9, #e0f7fa);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #00796b;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .search-box {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+    }
+    input {
+      width: 80%;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    button {
+      background-color: #00796b;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    button:hover {
+      background-color: #004d40;
+    }
+    .result {
+      margin-top: 20px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: left;
+      display: none;
+      white-space: pre-line;
+    }
+    .action-buttons {
+      margin-top: 15px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>SBS Bible Quiz 2025</h1>
+  <div class="search-box">
+    <input type="text" id="codeInput" placeholder="Enter your 6-digit code" maxlength="6" onkeypress="if(event.key==='Enter'){showResult();}">
+    <br>
+    <button onclick="showResult()">Submit</button>
+    <div id="result" class="result"></div>
+    <div class="action-buttons" id="actions">
+      <button onclick="downloadResult()">Download</button>
+      <button onclick="printResult()">Print</button>
+    </div>
+  </div>
+
+  <script>
+    // Full dataset from Excel
+    const data = {
+  "100501": {
+    "name": "Abner Ceasar L T",
+    "marks": 22
+  },
+  "100628": {
+    "name": "Juwana Joby",
+    "marks": 23
+  },
+  "103170": {
+    "name": "Angel C Jeril",
+    "marks": 26
+  },
+  "104805": {
+    "name": "Jedidha Lewelyn",
+    "marks": 27
+  },
+  "106261": {
+    "name": "Jesher T Jiss",
+    "marks": 50
+  },
+  "107317": {
+    "name": "Acer Jaison",
+    "marks": 34
+  },
+  "107427": {
+    "name": "Jenitta Luiz",
+    "marks": 31
+  },
+  "110363": {
+    "name": "Hanoch Jomon",
+    "marks": 26
+  },
+  "111197": {
+    "name": "Nathanael Dawrav",
+    "marks": 36
+  },
+  "111801": {
+    "name": "Jennifer Dawrav",
+    "marks": 28
+  },
+  "111928": {
+    "name": "Aksa Joyson ",
+    "marks": 49
+  },
+  "114078": {
+    "name": "Rebekah Prinson ",
+    "marks": 20
+  },
+  "116088": {
+    "name": "Ivin Shijoy",
+    "marks": 29
+  },
+  "116091": {
+    "name": "Megha Debu",
+    "marks": 23
+  },
+  "118121": {
+    "name": "Santino Savio",
+    "marks": 36
+  },
+  "119965": {
+    "name": "Juan Joy Issac",
+    "marks": 26
+  },
+  "121761": {
+    "name": "Sarah Mary Ben",
+    "marks": 30
+  },
+  "121786": {
+    "name": "Jwan Cheriyan Priyesh",
+    "marks": 27
+  },
+  "122172": {
+    "name": "Steve Abin ",
+    "marks": 31
+  },
+  "123361": {
+    "name": "Asher K Jibin",
+    "marks": 24
+  },
+  "124499": {
+    "name": "Eethel Anna Eldho",
+    "marks": 26
+  },
+  "124657": {
+    "name": "Juvia Jophin",
+    "marks": 32
+  },
+  "125644": {
+    "name": "Jewel Jo",
+    "marks": 24
+  },
+  "126401": {
+    "name": "Felix Jo",
+    "marks": 27
+  },
+  "128313": {
+    "name": "Abigail Jijo",
+    "marks": 30
+  },
+  "129807": {
+    "name": "Nixon Nishad",
+    "marks": 25
+  },
+  "131901": {
+    "name": "Bessy K Thomas",
+    "marks": 36
+  },
+  "132991": {
+    "name": "Juwan Bibin",
+    "marks": 35
+  },
+  "133090": {
+    "name": "Asher Lian Prince",
+    "marks": 23
+  },
+  "133930": {
+    "name": "Semei Lian Prince",
+    "marks": 42
+  },
+  "134381": {
+    "name": "Angel Joy",
+    "marks": 31
+  },
+  "135435": {
+    "name": "Samuel Babu",
+    "marks": 29
+  },
+  "138720": {
+    "name": "Ruben Reji",
+    "marks": 36
+  },
+  "139305": {
+    "name": "Andrea C Godly",
+    "marks": 28
+  },
+  "142489": {
+    "name": "Esther Baiju",
+    "marks": 47
+  },
+  "143151": {
+    "name": "Lois Biju",
+    "marks": 24
+  },
+  "143598": {
+    "name": "Eben Vineeth",
+    "marks": 20
+  },
+  "143682": {
+    "name": "Jeffry Shibu Varghese",
+    "marks": 27
+  },
+  "146029": {
+    "name": "Jennifer Shibu Varghese",
+    "marks": 49
+  },
+  "146098": {
+    "name": "Jeniya Laneesh",
+    "marks": 46
+  },
+  "146395": {
+    "name": "Alna Madhu",
+    "marks": 50
+  },
+  "147045": {
+    "name": "Ethan Stanleey",
+    "marks": 53
+  },
+  "147083": {
+    "name": "Steven Stanleey",
+    "marks": 56
+  },
+  "148197": {
+    "name": "Serah Anil Mathew",
+    "marks": 45
+  },
+  "149053": {
+    "name": "Johan Jones Aby",
+    "marks": 46
+  },
+  "150371": {
+    "name": "Stephanie Rose Shefington",
+    "marks": 37
+  },
+  "152151": {
+    "name": "Jenitta Mary Ebenezer",
+    "marks": 32
+  },
+  "152198": {
+    "name": "Kripa Ann Benaiah",
+    "marks": 45
+  },
+  "152847": {
+    "name": "Noah Varghese Gabby",
+    "marks": 45
+  },
+  "155765": {
+    "name": "Tanisha Jerry ",
+    "marks": 41
+  },
+  "156429": {
+    "name": "Elizabeth Rose Joseph",
+    "marks": 43
+  },
+  "157251": {
+    "name": "Manna Johnson",
+    "marks": 23
+  },
+  "159283": {
+    "name": "Laurainne Hannah Vadakkan",
+    "marks": 56
+  },
+  "160571": {
+    "name": "Anson Godly George",
+    "marks": 43
+  },
+  "162552": {
+    "name": "Juan Dan T",
+    "marks": 37
+  },
+  "162988": {
+    "name": "Shijo Joseph",
+    "marks": 53
+  },
+  "163968": {
+    "name": "Peninnah J Joy",
+    "marks": 67
+  },
+  "164490": {
+    "name": "Abia John",
+    "marks": 68
+  },
+  "165361": {
+    "name": "Persis Thomas",
+    "marks": 52
+  },
+  "166931": {
+    "name": "Hanock Francis",
+    "marks": 36
+  },
+  "167032": {
+    "name": "Helna Susan Joash",
+    "marks": 32
+  },
+  "168482": {
+    "name": "Joseph Shoney",
+    "marks": 31
+  },
+  "169400": {
+    "name": "Jenifer Luiz",
+    "marks": 42
+  },
+  "169885": {
+    "name": "Ann Elizabeth Thomas",
+    "marks": 36
+  },
+  "170622": {
+    "name": "Johanna Babu Simon",
+    "marks": 88
+  },
+  "171164": {
+    "name": "Ann Feba Dawrav",
+    "marks": 38
+  },
+  "173143": {
+    "name": "Sanzio Savio",
+    "marks": 41
+  },
+  "174151": {
+    "name": "Evelyn Elsa Shijoy",
+    "marks": 46
+  },
+  "174673": {
+    "name": "Jennifer Benny",
+    "marks": 71
+  },
+  "174866": {
+    "name": "Jovana Biju",
+    "marks": 85
+  },
+  "174887": {
+    "name": "Jaden Cherian Jaison ",
+    "marks": 36
+  },
+  "175325": {
+    "name": "Abel K Jibin",
+    "marks": 28
+  },
+  "176006": {
+    "name": "Abigail Ajo",
+    "marks": 50
+  },
+  "178140": {
+    "name": "Silla Johnson",
+    "marks": 39
+  },
+  "181574": {
+    "name": "Betsy K Thomas",
+    "marks": 42
+  },
+  "183423": {
+    "name": "Merlin Sathosh",
+    "marks": 61
+  },
+  "185925": {
+    "name": "Rufus Sanny",
+    "marks": 29
+  },
+  "187126": {
+    "name": "Dona Siju",
+    "marks": 27
+  },
+  "187457": {
+    "name": "Yemima Reji",
+    "marks": 55
+  },
+  "187957": {
+    "name": "Janna K Peter",
+    "marks": 26
+  },
+  "189264": {
+    "name": "Rocio Biju",
+    "marks": 31
+  },
+  "189531": {
+    "name": "Tilta Charls",
+    "marks": 49
+  },
+  "189719": {
+    "name": "Sarah Mary Simon",
+    "marks": 75
+  },
+  "190020": {
+    "name": "Immanuel Santhosh",
+    "marks": 28
+  },
+  "190479": {
+    "name": "Jemima P Shibu",
+    "marks": 41
+  },
+  "191550": {
+    "name": "Naysa Ann Abraham ",
+    "marks": 32
+  },
+  "193025": {
+    "name": "Dan Stanley",
+    "marks": 61
+  },
+  "193318": {
+    "name": "Jocelyn Liza Steve",
+    "marks": 47
+  },
+  "193616": {
+    "name": "Aaron Aby",
+    "marks": 46
+  },
+  "193745": {
+    "name": "Eddie James Benoy",
+    "marks": 23
+  },
+  "194032": {
+    "name": "Leon George Lijo",
+    "marks": 28
+  },
+  "196291": {
+    "name": "Joshua C Poothuran",
+    "marks": 38
+  },
+  "196367": {
+    "name": "Evangelin Syras",
+    "marks": 4
+  },
+  "196722": {
+    "name": "Lois Merie Ren",
+    "marks": 76
+  },
+  "197121": {
+    "name": "Jerusha E Alunkal",
+    "marks": 73
+  },
+  "197446": {
+    "name": "Beulah Jess Reji",
+    "marks": 55
+  },
+  "198790": {
+    "name": "Loyal Stanley",
+    "marks": 84
+  },
+  "199608": {
+    "name": "Yuana Shavoz Philip",
+    "marks": 70
+  },
+  "201587": {
+    "name": "Glayon Timothy Glaxon",
+    "marks": 33
+  },
+  "202176": {
+    "name": "Suzana Ann Dennis",
+    "marks": 47
+  },
+  "202979": {
+    "name": "Jonathan Paul Jim",
+    "marks": 70
+  },
+  "204855": {
+    "name": "Jerusha Jerry",
+    "marks": 30
+  },
+  "206057": {
+    "name": "Hanna Johnson",
+    "marks": 44
+  },
+  "206222": {
+    "name": "Ethan T Joseph",
+    "marks": 44
+  },
+  "207042": {
+    "name": "Abel Jophy",
+    "marks": 27
+  },
+  "207732": {
+    "name": "Neziha Muneer",
+    "marks": 49
+  },
+  "208026": {
+    "name": "Angel Lovely George",
+    "marks": 69
+  },
+  "208307": {
+    "name": "Paul Anil",
+    "marks": 20
+  },
+  "208357": {
+    "name": "Ashish Blessant",
+    "marks": 34
+  },
+  "209220": {
+    "name": "Aniya Shijo",
+    "marks": 48
+  },
+  "210722": {
+    "name": "Jeya Prakash E",
+    "marks": 62
+  },
+  "211179": {
+    "name": "Edison E",
+    "marks": 62
+  },
+  "211526": {
+    "name": "Cassia Elizabeth Justin",
+    "marks": 54
+  },
+  "211626": {
+    "name": "Liya Thankam Leejoe",
+    "marks": 77
+  },
+  "211676": {
+    "name": "Abel",
+    "marks": 27
+  },
+  "212958": {
+    "name": "Bleyon Antony",
+    "marks": 41
+  },
+  "213507": {
+    "name": "Samuel Thomas",
+    "marks": 34
+  },
+  "215316": {
+    "name": "K M Nathanael",
+    "marks": 59
+  },
+  "215588": {
+    "name": "Enosh Francis",
+    "marks": 24
+  },
+  "216312": {
+    "name": "Aleena James",
+    "marks": 55
+  },
+  "217331": {
+    "name": "Aksa Aby",
+    "marks": 56
+  },
+  "218265": {
+    "name": "Nesya Nebu",
+    "marks": 68
+  },
+  "219091": {
+    "name": "Kezia Joy Karedath",
+    "marks": 39
+  },
+  "219323": {
+    "name": "Jairus John",
+    "marks": 48
+  },
+  "220252": {
+    "name": "Jeffy Vijoy",
+    "marks": 72
+  },
+  "220317": {
+    "name": "Kripa A S",
+    "marks": 72
+  },
+  "220520": {
+    "name": "Abhiya K S ",
+    "marks": 46
+  },
+  "221899": {
+    "name": "Xavier Noyal A S ",
+    "marks": 49
+  },
+  "221927": {
+    "name": "Gilfa Glaijan",
+    "marks": 29
+  },
+  "221974": {
+    "name": "Juliet Maju",
+    "marks": 35
+  },
+  "226112": {
+    "name": "Isra Sibu Charlie",
+    "marks": 27
+  },
+  "227351": {
+    "name": "Angelina Joyce Joseph",
+    "marks": 38
+  },
+  "229970": {
+    "name": "Johan T Babu",
+    "marks": 99
+  },
+  "230504": {
+    "name": "Abraham Nevin",
+    "marks": 43
+  },
+  "232462": {
+    "name": "Abigail Prinson",
+    "marks": 40
+  },
+  "233922": {
+    "name": "Joanna K Das",
+    "marks": 83
+  },
+  "235035": {
+    "name": "Keziya T S",
+    "marks": 84
+  },
+  "235151": {
+    "name": "Jitty T Johnson",
+    "marks": 70
+  },
+  "236868": {
+    "name": "Jemi T Johnson",
+    "marks": 76
+  },
+  "238067": {
+    "name": "Jeslin Biju",
+    "marks": 94
+  },
+  "238461": {
+    "name": "Sam T S",
+    "marks": 53
+  },
+  "238731": {
+    "name": "James Varkey Jimmy",
+    "marks": 37
+  },
+  "238796": {
+    "name": "Joshua Joy",
+    "marks": 28
+  },
+  "239953": {
+    "name": "Aksa Baby",
+    "marks": 75
+  },
+  "240644": {
+    "name": "Asisha P  Saju",
+    "marks": 47
+  },
+  "241772": {
+    "name": "Babu Paul",
+    "marks": 34
+  },
+  "242187": {
+    "name": "Godwin Sam Pulickal",
+    "marks": 33
+  },
+  "245062": {
+    "name": "Jairus K Ben",
+    "marks": 29
+  },
+  "246772": {
+    "name": "Asher Jophy",
+    "marks": 22
+  },
+  "247209": {
+    "name": "Aquina P Eldho",
+    "marks": 32
+  },
+  "248042": {
+    "name": "Sara Baiju",
+    "marks": 29
+  },
+  "249135": {
+    "name": "Joan K Jinson",
+    "marks": 78
+  },
+  "250793": {
+    "name": "Sara Varghese",
+    "marks": 54
+  },
+  "251949": {
+    "name": "Serah Mariam Boby",
+    "marks": 58
+  },
+  "252740": {
+    "name": "Persis Shiju",
+    "marks": 79
+  },
+  "252780": {
+    "name": "Nathan Alex Paul",
+    "marks": 69
+  },
+  "252933": {
+    "name": "Johann Rajeev Vadakkan",
+    "marks": 38
+  },
+  "253900": {
+    "name": "Dayana Joby",
+    "marks": 63
+  },
+  "254157": {
+    "name": "Hestiya Biju ",
+    "marks": 51
+  },
+  "254757": {
+    "name": "Alan Joseph",
+    "marks": 43
+  },
+  "255224": {
+    "name": "Kevin Joseph",
+    "marks": 31
+  },
+  "255655": {
+    "name": "Johan Peter",
+    "marks": 48
+  },
+  "255964": {
+    "name": "Jubal Saji",
+    "marks": 37
+  },
+  "256992": {
+    "name": "Elna Susan Paul",
+    "marks": 47
+  },
+  "257360": {
+    "name": "Christy Sinish",
+    "marks": 39
+  },
+  "258262": {
+    "name": "Hanna Sunny",
+    "marks": 55
+  },
+  "259764": {
+    "name": "Ben Hail Robinson",
+    "marks": 26
+  },
+  "262539": {
+    "name": "Imes Lian prince",
+    "marks": 38
+  },
+  "263893": {
+    "name": "Leya Biju",
+    "marks": 41
+  },
+  "264515": {
+    "name": "Aksa Sibi Joy",
+    "marks": 32
+  },
+  "265081": {
+    "name": "Aphia James Manuel ",
+    "marks": 67
+  },
+  "266850": {
+    "name": "Sharon Junes",
+    "marks": 30
+  },
+  "266871": {
+    "name": "Jonat Biju",
+    "marks": 67
+  },
+  "267504": {
+    "name": "Kesiya P Siju",
+    "marks": 58
+  },
+  "267573": {
+    "name": "Kesiya Biju",
+    "marks": 66
+  },
+  "267982": {
+    "name": "Diya P Joice",
+    "marks": 64
+  },
+  "268491": {
+    "name": "Gods Gift Vinod ",
+    "marks": 23
+  },
+  "269036": {
+    "name": "Kezia Varghese",
+    "marks": 73
+  },
+  "269639": {
+    "name": "Kesiya Santhosh",
+    "marks": 25
+  },
+  "270740": {
+    "name": "Feba Sathosh",
+    "marks": 27
+  },
+  "272222": {
+    "name": "Asna Madhu",
+    "marks": 91
+  },
+  "273241": {
+    "name": "Rufus Daniel Joby",
+    "marks": 24
+  },
+  "273385": {
+    "name": "Archie Sam",
+    "marks": 31
+  },
+  "273684": {
+    "name": "Richie Sam Benoy",
+    "marks": 29
+  },
+  "274278": {
+    "name": "John C Poothuran",
+    "marks": 23
+  },
+  "274283": {
+    "name": "Sharon Shelly",
+    "marks": 37
+  },
+  "276527": {
+    "name": "Samuel Bovan",
+    "marks": 77
+  },
+  "278063": {
+    "name": "Ann Mariyam Aby",
+    "marks": 77
+  },
+  "278255": {
+    "name": "Seira",
+    "marks": 22
+  },
+  "280750": {
+    "name": "Abel Stephen Solomon",
+    "marks": 61
+  },
+  "281018": {
+    "name": "Bennet Roy Mathew",
+    "marks": 37
+  },
+  "281413": {
+    "name": "Jonadh Baiju",
+    "marks": 38
+  },
+  "283236": {
+    "name": "Alwin Shijo",
+    "marks": 50
+  },
+  "284105": {
+    "name": "Arun Joseph Anil",
+    "marks": 37
+  },
+  "284319": {
+    "name": "Arsha Shiju",
+    "marks": 82
+  },
+  "284994": {
+    "name": "Pheba Wilson",
+    "marks": 52
+  },
+  "286658": {
+    "name": "Hepzibah Jennifer",
+    "marks": 96
+  },
+  "287587": {
+    "name": "Esther",
+    "marks": 56
+  },
+  "291422": {
+    "name": "Jubi Mary James",
+    "marks": 37
+  },
+  "291530": {
+    "name": "Aiswarya Elsa Michael",
+    "marks": 29
+  },
+  "292655": {
+    "name": "Bazalel T Benny",
+    "marks": 65
+  },
+  "292911": {
+    "name": "Bovaz T Benny",
+    "marks": 26
+  },
+  "293311": {
+    "name": "Nevin Samuel Sam",
+    "marks": 41
+  },
+  "293816": {
+    "name": "Noel Joby",
+    "marks": 67
+  },
+  "294272": {
+    "name": "Blessy Antony",
+    "marks": 59
+  },
+  "295060": {
+    "name": "Joanna C Winford ",
+    "marks": 58
+  },
+  "295852": {
+    "name": "Aksa A",
+    "marks": 50
+  },
+  "296238": {
+    "name": "Nissy Issac",
+    "marks": 74
+  },
+  "296847": {
+    "name": "Shakeena Shaju",
+    "marks": 37
+  },
+  "297047": {
+    "name": "Sreya Xavier",
+    "marks": 70
+  },
+  "297517": {
+    "name": "Christy Niveditha",
+    "marks": 39
+  },
+  "298667": {
+    "name": "Paul P C",
+    "marks": 51
+  },
+  "299551": {
+    "name": "Gayos Sajeev",
+    "marks": 52
+  },
+  "299960": {
+    "name": "Ben Joby",
+    "marks": 63
+  },
+  "300058": {
+    "name": "Nikhil Augustine",
+    "marks": 51
+  },
+  "300728": {
+    "name": "Samuel Sajeev",
+    "marks": 65
+  },
+  "300754": {
+    "name": "Benhin M J",
+    "marks": 51
+  },
+  "301171": {
+    "name": "Lissy Abhijith",
+    "marks": 25
+  },
+  "302440": {
+    "name": "Abhijith Sasikumar",
+    "marks": 25
+  },
+  "303317": {
+    "name": "Santhuru",
+    "marks": 20
+  },
+  "304755": {
+    "name": "Jancy Issac",
+    "marks": 50
+  },
+  "304925": {
+    "name": "Sherin Elizabeth Samuel",
+    "marks": 82
+  },
+  "307206": {
+    "name": "Merrin Elezabeth Samuel",
+    "marks": 89
+  },
+  "307970": {
+    "name": "Joel K Saji",
+    "marks": 46
+  },
+  "308508": {
+    "name": "Joanna Jijoy",
+    "marks": 89
+  },
+  "309355": {
+    "name": "Niya Rose Francis",
+    "marks": 47
+  },
+  "310047": {
+    "name": "Rijo Jomon",
+    "marks": 88
+  },
+  "310052": {
+    "name": "Joyal Jomon",
+    "marks": 49
+  },
+  "310385": {
+    "name": "Sam Paul",
+    "marks": 68
+  },
+  "311643": {
+    "name": "Bovas Benny",
+    "marks": 75
+  },
+  "312013": {
+    "name": "Shan Thomas",
+    "marks": 39
+  },
+  "312913": {
+    "name": "Joanna Jomon",
+    "marks": 81
+  },
+  "312957": {
+    "name": "Anumol Cherian",
+    "marks": 76
+  },
+  "313737": {
+    "name": "Lydia Benny",
+    "marks": 41
+  },
+  "314464": {
+    "name": "Rinu Eldho",
+    "marks": 41
+  },
+  "322211": {
+    "name": "Lois Linu",
+    "marks": 94
+  },
+  "323812": {
+    "name": "Femy Benny",
+    "marks": 85
+  },
+  "323906": {
+    "name": "Nickson Varghese",
+    "marks": 30
+  },
+  "324341": {
+    "name": "Pritty Sunny",
+    "marks": 42
+  },
+  "324900": {
+    "name": "Jovitha Thankam Vijoy",
+    "marks": 76
+  },
+  "325585": {
+    "name": "Febi Roy",
+    "marks": 59
+  },
+  "325883": {
+    "name": "Lovise Jose",
+    "marks": 56
+  },
+  "325972": {
+    "name": "Jemima Merin M ",
+    "marks": 35
+  },
+  "326029": {
+    "name": "Sam Joseph",
+    "marks": 59
+  },
+  "328036": {
+    "name": "Ruhama Ravindran",
+    "marks": 50
+  },
+  "328306": {
+    "name": "Joel Johnson",
+    "marks": 44
+  },
+  "328682": {
+    "name": "Graison Xaviour MX",
+    "marks": 22
+  },
+  "330987": {
+    "name": "Alan Ashkin Ambi",
+    "marks": 34
+  },
+  "331227": {
+    "name": "Faith Michael",
+    "marks": 40
+  },
+  "331265": {
+    "name": "Feba Michael",
+    "marks": 60
+  },
+  "331826": {
+    "name": "Hepseeba A Melton",
+    "marks": 52
+  },
+  "332152": {
+    "name": "Josh Maju",
+    "marks": 39
+  },
+  "336472": {
+    "name": "Siya Nithin",
+    "marks": 57
+  },
+  "337074": {
+    "name": "Joel Lixon",
+    "marks": 43
+  },
+  "337155": {
+    "name": "Joshua Lixon ",
+    "marks": 34
+  },
+  "337219": {
+    "name": "Rufus Xavier",
+    "marks": 36
+  },
+  "337274": {
+    "name": "Samson K K ",
+    "marks": 32
+  },
+  "338224": {
+    "name": "Aksa Philip",
+    "marks": 60
+  },
+  "339684": {
+    "name": "Ruth Boaz",
+    "marks": 74
+  },
+  "340062": {
+    "name": "Joel Thankachan",
+    "marks": 57
+  },
+  "341640": {
+    "name": "Stephen Markose",
+    "marks": 60
+  },
+  "343820": {
+    "name": "Joice Raju",
+    "marks": 52
+  },
+  "343836": {
+    "name": "Grace Kalladayil Joy",
+    "marks": 46
+  },
+  "344120": {
+    "name": "Joel V Stanley",
+    "marks": 61
+  },
+  "344600": {
+    "name": "Abel George Stanley",
+    "marks": 50
+  },
+  "345186": {
+    "name": "Godwin Jacob Joy",
+    "marks": 41
+  },
+  "345786": {
+    "name": "Febi Sibin",
+    "marks": 35
+  },
+  "346706": {
+    "name": "Dalia Debnath",
+    "marks": 36
+  },
+  "347332": {
+    "name": "Sibin Biju",
+    "marks": 60
+  },
+  "347977": {
+    "name": "Jeril Jayan",
+    "marks": 66
+  },
+  "348898": {
+    "name": "Peter Vinod",
+    "marks": 58
+  },
+  "350521": {
+    "name": "Ansu Baby",
+    "marks": 70
+  },
+  "351110": {
+    "name": "Vince Sam Joseph",
+    "marks": 39
+  },
+  "354841": {
+    "name": "Akheesh P Saju",
+    "marks": 48
+  },
+  "355321": {
+    "name": "Aleena Elsa Jophy",
+    "marks": 27
+  },
+  "356045": {
+    "name": "Basil K Babu",
+    "marks": 31
+  },
+  "356714": {
+    "name": "Bincy Babu",
+    "marks": 94
+  },
+  "357105": {
+    "name": "Kripa Graison",
+    "marks": 48
+  },
+  "358493": {
+    "name": "Angel Varghese",
+    "marks": 56
+  },
+  "358809": {
+    "name": "Mizpah Maria Mathews",
+    "marks": 54
+  },
+  "358836": {
+    "name": "Linda Paul",
+    "marks": 29
+  },
+  "361640": {
+    "name": "Milcah Maria Mathews",
+    "marks": 67
+  },
+  "362315": {
+    "name": "Ann Lia Paul",
+    "marks": 93
+  },
+  "363400": {
+    "name": "Elbin Viju",
+    "marks": 31
+  },
+  "364188": {
+    "name": "Eldhose Viju",
+    "marks": 41
+  },
+  "365223": {
+    "name": "Anita Maria Shaiju",
+    "marks": 45
+  },
+  "366598": {
+    "name": "Alphy Saju",
+    "marks": 66
+  },
+  "367066": {
+    "name": "Cecilla Joy",
+    "marks": 66
+  },
+  "367376": {
+    "name": "Emmanuel Baby",
+    "marks": 32
+  },
+  "368325": {
+    "name": "Emeema Mariya Raju",
+    "marks": 65
+  },
+  "369044": {
+    "name": "Irene",
+    "marks": 33
+  },
+  "370253": {
+    "name": "Jerin Sam",
+    "marks": 56
+  },
+  "375046": {
+    "name": "Hanna Eldhose",
+    "marks": 38
+  },
+  "375257": {
+    "name": "Amos Eldhose",
+    "marks": 40
+  },
+  "377708": {
+    "name": "Jonathan Saji",
+    "marks": 56
+  },
+  "377709": {
+    "name": "Blesson K Thomas",
+    "marks": 29
+  },
+  "380404": {
+    "name": "Neha Raj",
+    "marks": 62
+  },
+  "381771": {
+    "name": "Mariya Santhosh",
+    "marks": 63
+  },
+  "382152": {
+    "name": "Esther Varghese",
+    "marks": 74
+  },
+  "382413": {
+    "name": "Elsa Varghese",
+    "marks": 54
+  },
+  "383021": {
+    "name": "Biljo Jhony",
+    "marks": 32
+  },
+  "383991": {
+    "name": "Eldho K Paul",
+    "marks": 18
+  },
+  "384279": {
+    "name": "Pratheeksha Shaju",
+    "marks": 65
+  },
+  "384949": {
+    "name": "Paul M Babu",
+    "marks": 30
+  },
+  "385240": {
+    "name": "Anna Siju",
+    "marks": 33
+  },
+  "387043": {
+    "name": "Soumya Das",
+    "marks": 69
+  },
+  "389147": {
+    "name": "Hanna E  Abraham",
+    "marks": 50
+  },
+  "389447": {
+    "name": "Sarah K Paul",
+    "marks": 38
+  },
+  "389998": {
+    "name": "Leya Nelson",
+    "marks": 50
+  },
+  "392439": {
+    "name": "Beulah Nelson",
+    "marks": 79
+  },
+  "392845": {
+    "name": "Achsa Ann Nelson",
+    "marks": 94
+  },
+  "396916": {
+    "name": "Gladys G E",
+    "marks": 55
+  },
+  "396936": {
+    "name": "Bright Baby",
+    "marks": 63
+  },
+  "397220": {
+    "name": "Tesiya Babu",
+    "marks": 42
+  },
+  "397240": {
+    "name": "George Alias",
+    "marks": 38
+  },
+  "397495": {
+    "name": "Alen Biju",
+    "marks": 54
+  },
+  "399557": {
+    "name": "Benna Aliyas",
+    "marks": 55
+  },
+  "400270": {
+    "name": "Clement Biju",
+    "marks": 27
+  },
+  "400345": {
+    "name": "Udayan K Sukumaran",
+    "marks": 41
+  },
+  "402933": {
+    "name": "Abiya Biju",
+    "marks": 29
+  },
+  "403070": {
+    "name": "Irene Sara Sam",
+    "marks": 88
+  },
+  "403356": {
+    "name": "Gladiya Anna Joy",
+    "marks": 50
+  },
+  "403863": {
+    "name": "Joyal George",
+    "marks": 60
+  },
+  "404690": {
+    "name": "Priscilla Biju",
+    "marks": 72
+  },
+  "407951": {
+    "name": "Emlin James",
+    "marks": 75
+  },
+  "408904": {
+    "name": "Femi C S ",
+    "marks": 67
+  },
+  "410255": {
+    "name": "Joanna Alis Johnson",
+    "marks": 85
+  },
+  "411282": {
+    "name": "Christeela Vinod",
+    "marks": 31
+  },
+  "413129": {
+    "name": "Hephzy Bennet",
+    "marks": 39
+  },
+  "414388": {
+    "name": "Ann Mariya Shibu",
+    "marks": 61
+  },
+  "415164": {
+    "name": "Evan Jose",
+    "marks": 60
+  },
+  "415232": {
+    "name": "Sudinkumar P S ",
+    "marks": 70
+  },
+  "416297": {
+    "name": "Mariya Subin",
+    "marks": 42
+  },
+  "418484": {
+    "name": "Jibin Billy Paul",
+    "marks": 59
+  },
+  "421497": {
+    "name": "Lloyd Bennet Thomas",
+    "marks": 52
+  },
+  "423896": {
+    "name": "Alvin Roy",
+    "marks": 44
+  },
+  "424730": {
+    "name": "Helen Sam",
+    "marks": 67
+  },
+  "425024": {
+    "name": "Prasanth K V ",
+    "marks": 58
+  },
+  "427278": {
+    "name": "Titus Ani",
+    "marks": 47
+  },
+  "427385": {
+    "name": "Jini Nobel",
+    "marks": 72
+  },
+  "430306": {
+    "name": "Samuel Anand",
+    "marks": 44
+  },
+  "431074": {
+    "name": "Donna Lisly Alex",
+    "marks": 63
+  },
+  "433280": {
+    "name": "Frabin Pallissery",
+    "marks": 22
+  },
+  "433933": {
+    "name": "Fraser Pallissery",
+    "marks": 34
+  },
+  "435825": {
+    "name": "Hanah Rachel Sam",
+    "marks": 59
+  },
+  "435869": {
+    "name": "Daniel Finny",
+    "marks": 41
+  },
+  "438860": {
+    "name": "Hannah Anil Mathew",
+    "marks": 59
+  },
+  "438896": {
+    "name": "Betsy Mariyam Binumon",
+    "marks": 66
+  },
+  "441079": {
+    "name": "Jubel Bovan",
+    "marks": 67
+  },
+  "441676": {
+    "name": "Noel Bovan ",
+    "marks": 48
+  },
+  "443132": {
+    "name": "Marshell Shelly",
+    "marks": 58
+  },
+  "443465": {
+    "name": "Swetha Maria Charles",
+    "marks": 83
+  },
+  "443790": {
+    "name": "Alana Ann Sam",
+    "marks": 51
+  },
+  "444676": {
+    "name": "Melvin Mathew",
+    "marks": 32
+  },
+  "446852": {
+    "name": "Reena Stanley",
+    "marks": 59
+  },
+  "447065": {
+    "name": "Sarah Saju Stephen",
+    "marks": 70
+  },
+  "449174": {
+    "name": "Febi Lee George",
+    "marks": 21
+  },
+  "449349": {
+    "name": "Acshah Shiji Joy",
+    "marks": 32
+  },
+  "450082": {
+    "name": "Aaron Shiji Joy",
+    "marks": 47
+  },
+  "450624": {
+    "name": "Kevin Markose",
+    "marks": 51
+  },
+  "450836": {
+    "name": "Annie Thangam Paul",
+    "marks": 81
+  },
+  "451635": {
+    "name": "Samuel Johnson Philemon",
+    "marks": 22
+  },
+  "451755": {
+    "name": "Bezalel Rufus",
+    "marks": 34
+  },
+  "452886": {
+    "name": "Abel Johnson Philemon",
+    "marks": 42
+  },
+  "453107": {
+    "name": "Joel John",
+    "marks": 45
+  },
+  "453909": {
+    "name": "Jobin John",
+    "marks": 39
+  },
+  "454072": {
+    "name": "Gladwin Febin",
+    "marks": 64
+  },
+  "454379": {
+    "name": "Ben Saju Pappalil",
+    "marks": 45
+  },
+  "456121": {
+    "name": "Nibin James",
+    "marks": 32
+  },
+  "456125": {
+    "name": "Annie John",
+    "marks": 73
+  },
+  "456550": {
+    "name": "Spenda Justin",
+    "marks": 64
+  },
+  "457258": {
+    "name": "Blessy Yohannan",
+    "marks": 92
+  },
+  "457424": {
+    "name": "E Leela",
+    "marks": 38
+  },
+  "460336": {
+    "name": "Greeshma Jose",
+    "marks": 94
+  },
+  "460403": {
+    "name": "Samuel P J ",
+    "marks": 41
+  },
+  "461147": {
+    "name": "Bindu Thomas",
+    "marks": 91
+  },
+  "461377": {
+    "name": "Salomy Joy",
+    "marks": 91
+  },
+  "461448": {
+    "name": "Suni Benny",
+    "marks": 82
+  },
+  "462301": {
+    "name": "Jolly Henry",
+    "marks": 76
+  },
+  "463149": {
+    "name": "Ceaser L T",
+    "marks": 27
+  },
+  "465905": {
+    "name": "Yeshudas L T",
+    "marks": 57
+  },
+  "466363": {
+    "name": "Preethy P C ",
+    "marks": 50
+  },
+  "468816": {
+    "name": "Nissy Yesudas",
+    "marks": 48
+  },
+  "469534": {
+    "name": "Darwin George ",
+    "marks": 74
+  },
+  "469978": {
+    "name": "Melvin Thomas",
+    "marks": 68
+  },
+  "470031": {
+    "name": "Jaiby John Mathews",
+    "marks": 56
+  },
+  "472782": {
+    "name": "Kavya Rajan V",
+    "marks": 83
+  },
+  "473510": {
+    "name": "Princy John",
+    "marks": 59
+  },
+  "473569": {
+    "name": "Femily Roshvin",
+    "marks": 49
+  },
+  "474546": {
+    "name": "Kesiya Joby",
+    "marks": 38
+  },
+  "475010": {
+    "name": "Leela Johnson",
+    "marks": 68
+  },
+  "475455": {
+    "name": "Mini K M ",
+    "marks": 42
+  },
+  "477764": {
+    "name": "Priya Jeril",
+    "marks": 46
+  },
+  "480635": {
+    "name": "Jisa Siju",
+    "marks": 41
+  },
+  "480955": {
+    "name": "Naisy Prince",
+    "marks": 74
+  },
+  "482115": {
+    "name": "Mary Joby",
+    "marks": 65
+  },
+  "485684": {
+    "name": "Joby K J ",
+    "marks": 50
+  },
+  "485813": {
+    "name": "Joby George",
+    "marks": 75
+  },
+  "491835": {
+    "name": "Stephanose P C",
+    "marks": 33
+  },
+  "492566": {
+    "name": "Siju M P",
+    "marks": 76
+  },
+  "493217": {
+    "name": "Lewelyn A Daniel",
+    "marks": 39
+  },
+  "494389": {
+    "name": "Asnath Kannan",
+    "marks": 79
+  },
+  "495864": {
+    "name": "Renni Lewelyn",
+    "marks": 44
+  },
+  "496653": {
+    "name": "Bincy Anil",
+    "marks": 54
+  },
+  "498512": {
+    "name": "Aby Ittyavera",
+    "marks": 42
+  },
+  "499639": {
+    "name": "Jisha Jose",
+    "marks": 52
+  },
+  "499749": {
+    "name": "Supriya James",
+    "marks": 96
+  },
+  "499925": {
+    "name": "Phebe Aby",
+    "marks": 58
+  },
+  "501973": {
+    "name": "Sabitha Charles",
+    "marks": 92
+  },
+  "503858": {
+    "name": "Sumi Elizabeth Benjamin",
+    "marks": 94
+  },
+  "504661": {
+    "name": "Suni Joby",
+    "marks": 95
+  },
+  "505041": {
+    "name": "Sharon Samuel ",
+    "marks": 94
+  },
+  "505606": {
+    "name": "Suni Nebu",
+    "marks": 84
+  },
+  "506128": {
+    "name": "Shyni Joy",
+    "marks": 50
+  },
+  "507190": {
+    "name": "Suby Paul",
+    "marks": 94
+  },
+  "507939": {
+    "name": "Sebia Leinad",
+    "marks": 33
+  },
+  "509452": {
+    "name": "Leinad T Varghese",
+    "marks": 50
+  },
+  "510314": {
+    "name": "Blessy Benoymon",
+    "marks": 74
+  },
+  "510378": {
+    "name": "Sheeba M K ",
+    "marks": 70
+  },
+  "511368": {
+    "name": "Rekha Bovan",
+    "marks": 57
+  },
+  "513702": {
+    "name": "Jisa Ren",
+    "marks": 95
+  },
+  "514227": {
+    "name": "Simi Jomon",
+    "marks": 86
+  },
+  "515190": {
+    "name": "Jiss T Johny",
+    "marks": 90
+  },
+  "516433": {
+    "name": "Jobin James",
+    "marks": 51
+  },
+  "522159": {
+    "name": "Dona Benny",
+    "marks": 70
+  },
+  "522409": {
+    "name": "Asa Samuel",
+    "marks": 89
+  },
+  "522932": {
+    "name": "Abiya Babu",
+    "marks": 91
+  },
+  "524187": {
+    "name": "Siny Linu",
+    "marks": 96
+  },
+  "524542": {
+    "name": "Binny Rachel Thomas",
+    "marks": 81
+  },
+  "524960": {
+    "name": "Jemcy James",
+    "marks": 65
+  },
+  "525533": {
+    "name": "Jomet M Joy",
+    "marks": 72
+  },
+  "528041": {
+    "name": "Aby Jones",
+    "marks": 87
+  },
+  "528319": {
+    "name": "Hridya Susan Ealias",
+    "marks": 85
+  },
+  "528607": {
+    "name": "Geni Shavoz",
+    "marks": 96
+  },
+  "528748": {
+    "name": "A D Joseph",
+    "marks": 58
+  },
+  "531466": {
+    "name": "Ushakumari E K ",
+    "marks": 56
+  },
+  "532070": {
+    "name": "Saffy Ambi",
+    "marks": 60
+  },
+  "534302": {
+    "name": "Antony Luiz",
+    "marks": 49
+  },
+  "534699": {
+    "name": "Jaison A Joseph",
+    "marks": 45
+  },
+  "534797": {
+    "name": "Shaji K L",
+    "marks": 60
+  },
+  "536111": {
+    "name": "Eliyav Joseph",
+    "marks": 39
+  },
+  "537225": {
+    "name": "Sebastian A X",
+    "marks": 90
+  },
+  "537458": {
+    "name": "Bini Jose",
+    "marks": 54
+  },
+  "537516": {
+    "name": "Meera Lewis",
+    "marks": 84
+  },
+  "537913": {
+    "name": "Asha Ashlin",
+    "marks": 26
+  },
+  "538033": {
+    "name": "Sruthy K S ",
+    "marks": 76
+  },
+  "538056": {
+    "name": "Lidiya",
+    "marks": 41
+  },
+  "539994": {
+    "name": "Glaxon C F",
+    "marks": 49
+  },
+  "540875": {
+    "name": "Glaijan C Francis",
+    "marks": 22
+  },
+  "541513": {
+    "name": "Nithin Johnson",
+    "marks": 20
+  },
+  "542240": {
+    "name": "Thushara Yesudas",
+    "marks": 76
+  },
+  "544189": {
+    "name": "Ann Mary Glaxon",
+    "marks": 37
+  },
+  "544286": {
+    "name": "George Shefigton",
+    "marks": 29
+  },
+  "544828": {
+    "name": "Biji Sibu",
+    "marks": 44
+  },
+  "545708": {
+    "name": "Jijimol Maju",
+    "marks": 69
+  },
+  "545771": {
+    "name": "Leelamma K K",
+    "marks": 61
+  },
+  "546695": {
+    "name": "Anu Thomas",
+    "marks": 41
+  },
+  "546763": {
+    "name": "Nimmy Hanoley",
+    "marks": 61
+  },
+  "546996": {
+    "name": "Shanty Babu",
+    "marks": 99
+  },
+  "547448": {
+    "name": "Godsy Eby",
+    "marks": 32
+  },
+  "547965": {
+    "name": "Dennis Daniel",
+    "marks": 35
+  },
+  "549207": {
+    "name": "Jacquiline Shaiphia Charles",
+    "marks": 53
+  },
+  "549357": {
+    "name": "Yemeema T L",
+    "marks": 64
+  },
+  "549390": {
+    "name": "Preskila Sam",
+    "marks": 39
+  },
+  "552623": {
+    "name": "Suja Philip",
+    "marks": 29
+  },
+  "554278": {
+    "name": "Xaviour Joyson",
+    "marks": 29
+  },
+  "554433": {
+    "name": "Elizabath Lixon",
+    "marks": 84
+  },
+  "559712": {
+    "name": "Joyce Prinson",
+    "marks": 56
+  },
+  "560901": {
+    "name": "Jessy George",
+    "marks": 57
+  },
+  "561745": {
+    "name": "Persis Shaval",
+    "marks": 50
+  },
+  "563511": {
+    "name": "Manjusha",
+    "marks": 84
+  },
+  "566320": {
+    "name": "Prinson T X",
+    "marks": 56
+  },
+  "566393": {
+    "name": "Boaz Antony",
+    "marks": 78
+  },
+  "568625": {
+    "name": "Shanmukhadas K C",
+    "marks": 85
+  },
+  "569326": {
+    "name": "Binu Stanley",
+    "marks": 76
+  },
+  "569540": {
+    "name": "Aimy Treesa Johney",
+    "marks": 46
+  },
+  "571804": {
+    "name": "Sam John ",
+    "marks": 37
+  },
+  "572028": {
+    "name": "Joji",
+    "marks": 26
+  },
+  "572315": {
+    "name": "Biju P Joseph",
+    "marks": 87
+  },
+  "573282": {
+    "name": "Shijoy Kuriakose",
+    "marks": 48
+  },
+  "574486": {
+    "name": "Jinu Shijoy",
+    "marks": 38
+  },
+  "574702": {
+    "name": "Sigi Samson",
+    "marks": 84
+  },
+  "574758": {
+    "name": "Flora Shibu",
+    "marks": 92
+  },
+  "574921": {
+    "name": "Sheena Savio",
+    "marks": 51
+  },
+  "575481": {
+    "name": "Bincy Benny",
+    "marks": 67
+  },
+  "575562": {
+    "name": "Shyni Biju",
+    "marks": 97
+  },
+  "575765": {
+    "name": "Liza Bijoy Paul",
+    "marks": 96
+  },
+  "576209": {
+    "name": "Shibu T M ",
+    "marks": 41
+  },
+  "576588": {
+    "name": "Antony Sabio",
+    "marks": 55
+  },
+  "578008": {
+    "name": "Benny P Joseph",
+    "marks": 68
+  },
+  "578960": {
+    "name": "Anisha Vinoop",
+    "marks": 91
+  },
+  "579069": {
+    "name": "Jissa Rajeev",
+    "marks": 77
+  },
+  "579173": {
+    "name": "Binu Saju",
+    "marks": 42
+  },
+  "581197": {
+    "name": "Joy M Issac",
+    "marks": 71
+  },
+  "583042": {
+    "name": "Animol Jophy",
+    "marks": 77
+  },
+  "583219": {
+    "name": "Eby Varghese",
+    "marks": 63
+  },
+  "583948": {
+    "name": "Junitha Joy",
+    "marks": 41
+  },
+  "584382": {
+    "name": "Jiji Sam",
+    "marks": 75
+  },
+  "585394": {
+    "name": "Jerin Sali",
+    "marks": 73
+  },
+  "586085": {
+    "name": "Sumitha Baiju",
+    "marks": 53
+  },
+  "586578": {
+    "name": "Jiby Biju",
+    "marks": 26
+  },
+  "587082": {
+    "name": "Merin Priyesh",
+    "marks": 40
+  },
+  "587096": {
+    "name": "Pretty Peter",
+    "marks": 32
+  },
+  "587876": {
+    "name": "Princy Sunil",
+    "marks": 22
+  },
+  "589194": {
+    "name": "Anugraha Joel",
+    "marks": 36
+  },
+  "593347": {
+    "name": "Sindhu Eldo",
+    "marks": 44
+  },
+  "596213": {
+    "name": "Feba Abin",
+    "marks": 72
+  },
+  "597347": {
+    "name": "Biju M Y",
+    "marks": 28
+  },
+  "597542": {
+    "name": "Baiju Joseph",
+    "marks": 40
+  },
+  "598047": {
+    "name": "Shone J Iype",
+    "marks": 30
+  },
+  "600264": {
+    "name": "Priyesh P Cheriyan",
+    "marks": 60
+  },
+  "601828": {
+    "name": "Jinson K P",
+    "marks": 42
+  },
+  "603075": {
+    "name": "Titty C Issac",
+    "marks": 85
+  },
+  "605176": {
+    "name": "Soniya Titty",
+    "marks": 83
+  },
+  "605907": {
+    "name": "Elmy K John",
+    "marks": 70
+  },
+  "607420": {
+    "name": "Leni Mary John",
+    "marks": 70
+  },
+  "607607": {
+    "name": "Beena Shiju",
+    "marks": 86
+  },
+  "607882": {
+    "name": "Joby George",
+    "marks": 52
+  },
+  "608451": {
+    "name": "Jophin Sam Joseph",
+    "marks": 73
+  },
+  "608847": {
+    "name": "Dona Kurian ",
+    "marks": 97
+  },
+  "609761": {
+    "name": "Mini Reji Thomas",
+    "marks": 64
+  },
+  "610918": {
+    "name": "Shiji Vinu",
+    "marks": 83
+  },
+  "610949": {
+    "name": "Leena Kurian",
+    "marks": 94
+  },
+  "611481": {
+    "name": "Maya Shaiju",
+    "marks": 63
+  },
+  "611719": {
+    "name": "Jolly Prince",
+    "marks": 46
+  },
+  "611725": {
+    "name": "Elmy Shiju",
+    "marks": 36
+  },
+  "612016": {
+    "name": "Laya Rajeev",
+    "marks": 82
+  },
+  "614038": {
+    "name": "Meagan Mathew",
+    "marks": 63
+  },
+  "614082": {
+    "name": "Jincy Twinkle Paul",
+    "marks": 94
+  },
+  "614608": {
+    "name": "Nini Joby",
+    "marks": 64
+  },
+  "614972": {
+    "name": "Shiju T",
+    "marks": 68
+  },
+  "615022": {
+    "name": "Mini John",
+    "marks": 34
+  },
+  "615096": {
+    "name": "Sonia Kurian",
+    "marks": 44
+  },
+  "615722": {
+    "name": "Nisha Saji",
+    "marks": 89
+  },
+  "616231": {
+    "name": "Nishad Varghese",
+    "marks": 54
+  },
+  "616240": {
+    "name": "Saji John",
+    "marks": 65
+  },
+  "616814": {
+    "name": "Vinish Paulose",
+    "marks": 35
+  },
+  "618790": {
+    "name": "Kurian K Joseph",
+    "marks": 47
+  },
+  "622064": {
+    "name": "Jijo Baby",
+    "marks": 51
+  },
+  "625263": {
+    "name": "Vinitha Jijo",
+    "marks": 49
+  },
+  "626532": {
+    "name": "Seemol Peter",
+    "marks": 51
+  },
+  "627968": {
+    "name": "Sunitha Nishad",
+    "marks": 58
+  },
+  "631900": {
+    "name": "Shiny Kuriakose",
+    "marks": 62
+  },
+  "633443": {
+    "name": "Solomon K Peter",
+    "marks": 33
+  },
+  "633699": {
+    "name": "Joly Babu",
+    "marks": 63
+  },
+  "633965": {
+    "name": "Sinish Mathew",
+    "marks": 62
+  },
+  "635952": {
+    "name": "Shaiby K V",
+    "marks": 27
+  },
+  "637259": {
+    "name": "Jooly Joy",
+    "marks": 77
+  },
+  "637338": {
+    "name": "Ajitha Paulson",
+    "marks": 32
+  },
+  "637380": {
+    "name": "Sheeja Santhosh",
+    "marks": 33
+  },
+  "640346": {
+    "name": "Magin Sinish",
+    "marks": 85
+  },
+  "641147": {
+    "name": "Reji P V",
+    "marks": 36
+  },
+  "643027": {
+    "name": "Kenas Mathai",
+    "marks": 27
+  },
+  "643161": {
+    "name": "Sunny P V",
+    "marks": 94
+  },
+  "643450": {
+    "name": "Raina Sunny",
+    "marks": 56
+  },
+  "644285": {
+    "name": "Prince Varghese",
+    "marks": 61
+  },
+  "644454": {
+    "name": "Soumya Prince",
+    "marks": 82
+  },
+  "645565": {
+    "name": "Shaiby Babu",
+    "marks": 70
+  },
+  "646357": {
+    "name": "Sini Eldho",
+    "marks": 39
+  },
+  "647885": {
+    "name": "Jenny Paul",
+    "marks": 67
+  },
+  "648337": {
+    "name": "Nancy Roy",
+    "marks": 49
+  },
+  "653056": {
+    "name": "Daisy Stephen Solomon",
+    "marks": 73
+  },
+  "653423": {
+    "name": "Benjo Joy",
+    "marks": 87
+  },
+  "653454": {
+    "name": "Ann Diana Godly",
+    "marks": 79
+  },
+  "654073": {
+    "name": "Anu Mathews",
+    "marks": 61
+  },
+  "654341": {
+    "name": "Siji Biju",
+    "marks": 94
+  },
+  "655959": {
+    "name": "Biju John",
+    "marks": 73
+  },
+  "657702": {
+    "name": "Rejimon P T",
+    "marks": 68
+  },
+  "658249": {
+    "name": "Rency Paulose",
+    "marks": 68
+  },
+  "658921": {
+    "name": "Anitha Prince",
+    "marks": 46
+  },
+  "659527": {
+    "name": "Joice John",
+    "marks": 63
+  },
+  "659940": {
+    "name": "Teena Baiju",
+    "marks": 64
+  },
+  "660100": {
+    "name": "Preetha Biju",
+    "marks": 61
+  },
+  "660429": {
+    "name": "Uni Sukumaran",
+    "marks": 47
+  },
+  "660440": {
+    "name": "Baiju Baby",
+    "marks": 59
+  },
+  "661034": {
+    "name": "Jancy Biju",
+    "marks": 75
+  },
+  "661161": {
+    "name": "Simi Sam",
+    "marks": 68
+  },
+  "663892": {
+    "name": "Steby Jackson",
+    "marks": 45
+  },
+  "664285": {
+    "name": "Sam Abraham",
+    "marks": 91
+  },
+  "664516": {
+    "name": "Josna Vineeth",
+    "marks": 29
+  },
+  "665468": {
+    "name": "Merlin Abraham Plavelil",
+    "marks": 41
+  },
+  "665809": {
+    "name": "Finny James",
+    "marks": 40
+  },
+  "668921": {
+    "name": "Silpa Jijo",
+    "marks": 35
+  },
+  "669197": {
+    "name": "Shibi Joice",
+    "marks": 72
+  },
+  "670546": {
+    "name": "Sujatha K",
+    "marks": 19
+  },
+  "670550": {
+    "name": "Shaijy Sali",
+    "marks": 37
+  },
+  "671737": {
+    "name": "Lisa Varghese",
+    "marks": 69
+  },
+  "671757": {
+    "name": "Liseela Jiny",
+    "marks": 62
+  },
+  "671923": {
+    "name": "Jiny Dan T",
+    "marks": 52
+  },
+  "674867": {
+    "name": "Dixon Abraham",
+    "marks": 91
+  },
+  "675969": {
+    "name": "Subin Kumar P S",
+    "marks": 43
+  },
+  "676300": {
+    "name": "Bindu Suku",
+    "marks": 44
+  },
+  "676838": {
+    "name": "Bilcy Billy",
+    "marks": 81
+  },
+  "677055": {
+    "name": "Manju Skariah",
+    "marks": 64
+  },
+  "677856": {
+    "name": "Beula Benoy",
+    "marks": 91
+  },
+  "677905": {
+    "name": "Tepsy Charls",
+    "marks": 68
+  },
+  "677953": {
+    "name": "Lisa Paul",
+    "marks": 57
+  },
+  "678633": {
+    "name": "Rinimol Varghese",
+    "marks": 86
+  },
+  "680400": {
+    "name": "Veena Benoy",
+    "marks": 84
+  },
+  "680566": {
+    "name": "Prathiba Simon",
+    "marks": 63
+  },
+  "682182": {
+    "name": "Jincy Santhosh",
+    "marks": 36
+  },
+  "682187": {
+    "name": "Treesa Lawrance",
+    "marks": 42
+  },
+  "683533": {
+    "name": "Heera Shibu",
+    "marks": 77
+  },
+  "684912": {
+    "name": "Jayanthy kalesan",
+    "marks": 56
+  },
+  "685390": {
+    "name": "Aksa Ajesh",
+    "marks": 63
+  },
+  "687512": {
+    "name": "Noble P V",
+    "marks": 42
+  },
+  "688089": {
+    "name": "Tina Joy Mathew",
+    "marks": 78
+  },
+  "688261": {
+    "name": "Soosan Varghese K",
+    "marks": 58
+  },
+  "690383": {
+    "name": "Reena Paul",
+    "marks": 91
+  },
+  "691657": {
+    "name": "Cibya Mary Babu",
+    "marks": 74
+  },
+  "692477": {
+    "name": "Ebenezer Kurian Alunkal",
+    "marks": 79
+  },
+  "693131": {
+    "name": "Merlin Grace",
+    "marks": 66
+  },
+  "693223": {
+    "name": "Godly James",
+    "marks": 61
+  },
+  "694365": {
+    "name": "Shavoz Philip",
+    "marks": 54
+  },
+  "694653": {
+    "name": "Sheeba Joseph",
+    "marks": 29
+  },
+  "695040": {
+    "name": "Alan Abraham Thomas",
+    "marks": 57
+  },
+  "696899": {
+    "name": "Sheena Alan Thomas",
+    "marks": 41
+  },
+  "696973": {
+    "name": "Annie Manoj Issac",
+    "marks": 71
+  },
+  "697298": {
+    "name": "Sheela Thomas",
+    "marks": 53
+  },
+  "698386": {
+    "name": "Bency Mathew",
+    "marks": 69
+  },
+  "698531": {
+    "name": "Mary Susan Benaiah",
+    "marks": 58
+  },
+  "698832": {
+    "name": "Blessy Thampy",
+    "marks": 70
+  },
+  "700744": {
+    "name": "Prabha Mathews",
+    "marks": 51
+  },
+  "700958": {
+    "name": "Niti Markose",
+    "marks": 76
+  },
+  "703443": {
+    "name": "Jobin Samuel",
+    "marks": 37
+  },
+  "705416": {
+    "name": "Tephilla Mathew",
+    "marks": 63
+  },
+  "706287": {
+    "name": "Wilson P Ninan",
+    "marks": 65
+  },
+  "706311": {
+    "name": "Shiju K N",
+    "marks": 81
+  },
+  "706832": {
+    "name": "Shaji Alex",
+    "marks": 26
+  },
+  "707113": {
+    "name": "M V Shaji",
+    "marks": 78
+  },
+  "711166": {
+    "name": "Rajee S Varghese",
+    "marks": 71
+  },
+  "711263": {
+    "name": "Jessy Wilson",
+    "marks": 74
+  },
+  "712428": {
+    "name": "Magie Pinhero",
+    "marks": 68
+  },
+  "714682": {
+    "name": "Mercy Devison",
+    "marks": 40
+  },
+  "715695": {
+    "name": "Rekha Shiju",
+    "marks": 48
+  },
+  "717299": {
+    "name": "Binny Zacharia",
+    "marks": 92
+  },
+  "717343": {
+    "name": "Sherly James",
+    "marks": 79
+  },
+  "718236": {
+    "name": "Chinnamma Samuel",
+    "marks": 62
+  },
+  "718452": {
+    "name": "Jessy John",
+    "marks": 90
+  },
+  "719009": {
+    "name": "Ani Joseph",
+    "marks": 87
+  },
+  "719167": {
+    "name": "Thomas M K ",
+    "marks": 56
+  },
+  "719218": {
+    "name": "John Mathew",
+    "marks": 43
+  },
+  "719737": {
+    "name": "Asokan P V",
+    "marks": 38
+  },
+  "722298": {
+    "name": "Benny L T",
+    "marks": 92
+  },
+  "722859": {
+    "name": "Vincent K R",
+    "marks": 43
+  },
+  "723316": {
+    "name": "Maji Micheal ",
+    "marks": 39
+  },
+  "723834": {
+    "name": "Michel L T",
+    "marks": 48
+  },
+  "724151": {
+    "name": "Nelson",
+    "marks": 10
+  },
+  "724782": {
+    "name": "Henry",
+    "marks": 53
+  },
+  "724915": {
+    "name": "Joy S",
+    "marks": 55
+  },
+  "725342": {
+    "name": "Jesindha Justin",
+    "marks": 76
+  },
+  "728786": {
+    "name": "Sam Jacob",
+    "marks": 40
+  },
+  "729578": {
+    "name": "Mathew C John",
+    "marks": 69
+  },
+  "731169": {
+    "name": "Boban",
+    "marks": 68
+  },
+  "731660": {
+    "name": "Joby J Michael",
+    "marks": 58
+  },
+  "731946": {
+    "name": "Blessie Sam ",
+    "marks": 77
+  },
+  "732133": {
+    "name": "Susamma Varghese",
+    "marks": 63
+  },
+  "733021": {
+    "name": "Biji P R",
+    "marks": 79
+  },
+  "733379": {
+    "name": "Annie Fredy",
+    "marks": 86
+  },
+  "733644": {
+    "name": "Grasamma Thomas",
+    "marks": 65
+  },
+  "733867": {
+    "name": "Daisy Antony",
+    "marks": 49
+  },
+  "734101": {
+    "name": "Herine Philip",
+    "marks": 61
+  },
+  "735094": {
+    "name": "Mary Jolly",
+    "marks": 47
+  },
+  "739231": {
+    "name": "Beena Sajeev",
+    "marks": 80
+  },
+  "739758": {
+    "name": "Francis A X",
+    "marks": 47
+  },
+  "741830": {
+    "name": "Thomas T A",
+    "marks": 76
+  },
+  "743620": {
+    "name": "Ropson George",
+    "marks": 66
+  },
+  "743876": {
+    "name": "Martin Prince",
+    "marks": 53
+  },
+  "745091": {
+    "name": "Benny P G ",
+    "marks": 67
+  },
+  "749052": {
+    "name": "Jophnson C J",
+    "marks": 83
+  },
+  "749139": {
+    "name": "K A Joseph",
+    "marks": 88
+  },
+  "749252": {
+    "name": "Sunil",
+    "marks": 27
+  },
+  "749492": {
+    "name": "Milly Alwin",
+    "marks": 39
+  },
+  "749530": {
+    "name": "Sasikumar K C",
+    "marks": 42
+  },
+  "750167": {
+    "name": "Shibu Chacko",
+    "marks": 64
+  },
+  "752516": {
+    "name": "Saji Finny ",
+    "marks": 61
+  },
+  "752770": {
+    "name": "Fathima Shibu",
+    "marks": 74
+  },
+  "753946": {
+    "name": "Nissy Sunan",
+    "marks": 69
+  },
+  "754442": {
+    "name": "M J Joseph",
+    "marks": 64
+  },
+  "755505": {
+    "name": "Geena Sebastian",
+    "marks": 64
+  },
+  "756027": {
+    "name": "Jessy Thomas",
+    "marks": 80
+  },
+  "758183": {
+    "name": "Geogi Jose",
+    "marks": 70
+  },
+  "759475": {
+    "name": "Liji Peter",
+    "marks": 95
+  },
+  "759524": {
+    "name": "Leela George",
+    "marks": 68
+  },
+  "763982": {
+    "name": "Glady Saji",
+    "marks": 96
+  },
+  "764476": {
+    "name": "Mercy Martin",
+    "marks": 46
+  },
+  "765497": {
+    "name": "Mercy Charly",
+    "marks": 78
+  },
+  "766883": {
+    "name": "Jessy Reji",
+    "marks": 63
+  },
+  "768130": {
+    "name": "Jessy Saji",
+    "marks": 80
+  },
+  "769341": {
+    "name": "Gildis Sam",
+    "marks": 91
+  },
+  "772478": {
+    "name": "Lissy Jose",
+    "marks": 73
+  },
+  "774731": {
+    "name": "Shiji Varghese",
+    "marks": 58
+  },
+  "775650": {
+    "name": "George C Ittyarah",
+    "marks": 64
+  },
+  "776945": {
+    "name": "Sarakutty  Poulose",
+    "marks": 78
+  },
+  "777342": {
+    "name": "Delsi Benny",
+    "marks": 84
+  },
+  "779034": {
+    "name": "Glory Charls",
+    "marks": 72
+  },
+  "779458": {
+    "name": "Betsy Kurian",
+    "marks": 82
+  },
+  "780300": {
+    "name": "Shaly Jacob",
+    "marks": 90
+  },
+  "780380": {
+    "name": "Lissy Poulose",
+    "marks": 59
+  },
+  "781161": {
+    "name": "Girly Shaju",
+    "marks": 88
+  },
+  "781318": {
+    "name": "Mercy Jomon",
+    "marks": 95
+  },
+  "782614": {
+    "name": "Jessy Benny",
+    "marks": 79
+  },
+  "782787": {
+    "name": "Sholly Lal",
+    "marks": 78
+  },
+  "783214": {
+    "name": "Annakutty Samuel",
+    "marks": 91
+  },
+  "783418": {
+    "name": "Simi Charley",
+    "marks": 86
+  },
+  "783481": {
+    "name": "Joyce Babu",
+    "marks": 97
+  },
+  "784980": {
+    "name": "Jenny Vijoy",
+    "marks": 78
+  },
+  "786916": {
+    "name": "Jolly Roy",
+    "marks": 44
+  },
+  "789039": {
+    "name": "Leena Saju George",
+    "marks": 49
+  },
+  "789047": {
+    "name": "Ambi T K ",
+    "marks": 74
+  },
+  "790848": {
+    "name": "Xaviour M V ",
+    "marks": 56
+  },
+  "791218": {
+    "name": "Joseph M N",
+    "marks": 58
+  },
+  "791353": {
+    "name": "Shifi Shaji",
+    "marks": 45
+  },
+  "791581": {
+    "name": "Elsy Joseph",
+    "marks": 68
+  },
+  "793086": {
+    "name": "Maju Lawrance",
+    "marks": 65
+  },
+  "794279": {
+    "name": "Yesudas K V",
+    "marks": 43
+  },
+  "795350": {
+    "name": "Thomas Samuel",
+    "marks": 34
+  },
+  "796819": {
+    "name": "Simon Varghese",
+    "marks": 33
+  },
+  "798351": {
+    "name": "Mathew P J",
+    "marks": 36
+  },
+  "798480": {
+    "name": "P J Peter",
+    "marks": 71
+  },
+  "798659": {
+    "name": "Thampi Daniel",
+    "marks": 28
+  },
+  "799309": {
+    "name": "Daniel George",
+    "marks": 31
+  },
+  "799665": {
+    "name": "Babu Philip",
+    "marks": 88
+  },
+  "800901": {
+    "name": "Rachel Sebastian",
+    "marks": 68
+  },
+  "800991": {
+    "name": "Beena Sam Peter",
+    "marks": 55
+  },
+  "802274": {
+    "name": "Annamma Jose",
+    "marks": 72
+  },
+  "805281": {
+    "name": "Rageena Arnold",
+    "marks": 49
+  },
+  "806561": {
+    "name": "Johnson James",
+    "marks": 74
+  },
+  "807166": {
+    "name": "Jessy Jacob",
+    "marks": 62
+  },
+  "807238": {
+    "name": "Lalu babu",
+    "marks": 33
+  },
+  "809238": {
+    "name": "Christi Daniel",
+    "marks": 70
+  },
+  "810458": {
+    "name": "Saramma Simon",
+    "marks": 86
+  },
+  "811018": {
+    "name": "Mini Daniel",
+    "marks": 62
+  },
+  "811405": {
+    "name": "Raji Francis",
+    "marks": 61
+  },
+  "813580": {
+    "name": "Babu T simon",
+    "marks": 95
+  },
+  "816476": {
+    "name": "Manoj Issac",
+    "marks": 59
+  },
+  "816834": {
+    "name": "Alice Paul",
+    "marks": 62
+  },
+  "817291": {
+    "name": "Daisy Jacob",
+    "marks": 68
+  },
+  "817577": {
+    "name": "Chinnamma Thomas",
+    "marks": 95
+  },
+  "820581": {
+    "name": "Blessy Baji Philip",
+    "marks": 86
+  },
+  "824188": {
+    "name": "Kunjumol Boban",
+    "marks": 86
+  },
+  "826002": {
+    "name": "Lixon C R",
+    "marks": 47
+  },
+  "826310": {
+    "name": "Antony P X",
+    "marks": 55
+  },
+  "827121": {
+    "name": "Eliyamma Samuel",
+    "marks": 37
+  },
+  "829172": {
+    "name": "Philip C S",
+    "marks": 63
+  },
+  "829537": {
+    "name": "Lukose T M",
+    "marks": 77
+  },
+  "831154": {
+    "name": "Mary Antony",
+    "marks": 89
+  },
+  "832111": {
+    "name": "Maji Vavachan",
+    "marks": 64
+  },
+  "832149": {
+    "name": "Mary Raphel",
+    "marks": 51
+  },
+  "833018": {
+    "name": "Baby Antony",
+    "marks": 48
+  },
+  "833804": {
+    "name": "Sheeba Antony",
+    "marks": 60
+  },
+  "833897": {
+    "name": "Kunjumol Thampy",
+    "marks": 77
+  },
+  "835535": {
+    "name": "Saly Mathai",
+    "marks": 59
+  },
+  "837205": {
+    "name": "Thankachan P T",
+    "marks": 75
+  },
+  "837975": {
+    "name": "Shiji Joy",
+    "marks": 42
+  },
+  "838857": {
+    "name": "Sunny Nehamia",
+    "marks": 51
+  },
+  "839665": {
+    "name": "C C Johnkutty",
+    "marks": 73
+  },
+  "840328": {
+    "name": "M K Idiculla",
+    "marks": 49
+  },
+  "840587": {
+    "name": "S Sanjivi",
+    "marks": 80
+  },
+  "841005": {
+    "name": "C V Rachel",
+    "marks": 65
+  },
+  "843253": {
+    "name": "Liji Raju",
+    "marks": 49
+  },
+  "843796": {
+    "name": "Daly Sanjivi",
+    "marks": 38
+  },
+  "844202": {
+    "name": "Kusumam Idicula",
+    "marks": 25
+  },
+  "846196": {
+    "name": "Sheena Binoy",
+    "marks": 48
+  },
+  "846903": {
+    "name": "Benoy P Mathew",
+    "marks": 35
+  },
+  "849049": {
+    "name": "Raju Thomas",
+    "marks": 64
+  },
+  "851571": {
+    "name": "Stanley Varghese",
+    "marks": 74
+  },
+  "851572": {
+    "name": "Jose V V ",
+    "marks": 84
+  },
+  "851589": {
+    "name": "Elsy Shajan",
+    "marks": 82
+  },
+  "852730": {
+    "name": "Mercy Biju",
+    "marks": 82
+  },
+  "853470": {
+    "name": "Kunjumol Jose",
+    "marks": 69
+  },
+  "857672": {
+    "name": "Mini George",
+    "marks": 94
+  },
+  "859140": {
+    "name": "Susan Koshy",
+    "marks": 90
+  },
+  "861216": {
+    "name": "Bijoy Paul",
+    "marks": 76
+  },
+  "861669": {
+    "name": "George Chandy",
+    "marks": 68
+  },
+  "863702": {
+    "name": "Yohannan P P",
+    "marks": 76
+  },
+  "864092": {
+    "name": "M M Cherian",
+    "marks": 85
+  },
+  "865862": {
+    "name": "Lilly Abraham",
+    "marks": 82
+  },
+  "868021": {
+    "name": "Lissy Joseph",
+    "marks": 65
+  },
+  "870956": {
+    "name": "Liji Paulose",
+    "marks": 16
+  },
+  "872695": {
+    "name": "Lissy George",
+    "marks": 59
+  },
+  "874869": {
+    "name": "Sherly Sasi",
+    "marks": 59
+  },
+  "874974": {
+    "name": "Jessy Yohannan",
+    "marks": 71
+  },
+  "875694": {
+    "name": "Molly Vinod",
+    "marks": 39
+  },
+  "875997": {
+    "name": "Alice Baby",
+    "marks": 49
+  },
+  "876219": {
+    "name": "Beena Baby",
+    "marks": 82
+  },
+  "876271": {
+    "name": "Poulose K O",
+    "marks": 48
+  },
+  "880619": {
+    "name": "Baby Paul",
+    "marks": 33
+  },
+  "881598": {
+    "name": "Mercy P K",
+    "marks": 49
+  },
+  "882418": {
+    "name": "Benny George",
+    "marks": 40
+  },
+  "883494": {
+    "name": "Saramma Issac",
+    "marks": 58
+  },
+  "884674": {
+    "name": "Saramma Ouseph",
+    "marks": 45
+  },
+  "884688": {
+    "name": "Susan Abraham",
+    "marks": 72
+  },
+  "885609": {
+    "name": "Eldho P V",
+    "marks": 61
+  },
+  "886800": {
+    "name": "Susamma Mathew",
+    "marks": 79
+  },
+  "887349": {
+    "name": "Mathai K V",
+    "marks": 72
+  },
+  "887387": {
+    "name": "C D Thomas",
+    "marks": 92
+  },
+  "889925": {
+    "name": "V S Mathew",
+    "marks": 90
+  },
+  "890243": {
+    "name": "V J Samuel",
+    "marks": 56
+  },
+  "892372": {
+    "name": "Mercy C V",
+    "marks": 75
+  },
+  "893121": {
+    "name": "Aleyamma Samuel",
+    "marks": 77
+  },
+  "893909": {
+    "name": "Aliyamma Mathai",
+    "marks": 82
+  },
+  "895319": {
+    "name": "Mariakutty Thomas",
+    "marks": 79
+  },
+  "898905": {
+    "name": "Sossamma Simon",
+    "marks": 58
+  },
+  "899411": {
+    "name": "Mini Thomas",
+    "marks": 89
+  },
+  "901755": {
+    "name": "Moly Poulose",
+    "marks": 81
+  },
+  "902426": {
+    "name": "Saly Chacko",
+    "marks": 48
+  },
+  "903064": {
+    "name": "Gracy George",
+    "marks": 67
+  },
+  "903985": {
+    "name": "Viju Mathew",
+    "marks": 72
+  },
+  "904100": {
+    "name": "Lissy Joy",
+    "marks": 50
+  },
+  "904868": {
+    "name": "Saly Saju",
+    "marks": 89
+  },
+  "906773": {
+    "name": "Thomas M D",
+    "marks": 51
+  },
+  "906880": {
+    "name": "John V C",
+    "marks": 85
+  },
+  "908273": {
+    "name": "Usha Samuel",
+    "marks": 73
+  },
+  "909805": {
+    "name": "Lovely Kuriakose",
+    "marks": 73
+  },
+  "909940": {
+    "name": "Mary Peter",
+    "marks": 49
+  },
+  "910785": {
+    "name": "Valsa Jose",
+    "marks": 77
+  },
+  "912466": {
+    "name": "Joseph P Y",
+    "marks": 74
+  },
+  "912573": {
+    "name": "Eldhose P Y",
+    "marks": 55
+  },
+  "913586": {
+    "name": "Peter K J",
+    "marks": 62
+  },
+  "914468": {
+    "name": "Kunjamma Jose",
+    "marks": 75
+  },
+  "916015": {
+    "name": "Nisha Eldhose",
+    "marks": 40
+  },
+  "917684": {
+    "name": "Lissy Eldhose",
+    "marks": 51
+  },
+  "917801": {
+    "name": "Varkey K P",
+    "marks": 74
+  },
+  "918158": {
+    "name": "Saly Varghese",
+    "marks": 76
+  },
+  "918394": {
+    "name": "Salomy Varkey",
+    "marks": 79
+  },
+  "918815": {
+    "name": "Paulson K Ouseph",
+    "marks": 70
+  },
+  "919911": {
+    "name": "Johny V K",
+    "marks": 65
+  },
+  "920992": {
+    "name": "Lovely Jimmy",
+    "marks": 69
+  },
+  "921040": {
+    "name": "Mariama Mathai",
+    "marks": 23
+  },
+  "921857": {
+    "name": "Babu M P",
+    "marks": 29
+  },
+  "922031": {
+    "name": "V V Varkey",
+    "marks": 67
+  },
+  "923219": {
+    "name": "Ammini K V",
+    "marks": 83
+  },
+  "923428": {
+    "name": "Ruby Varkey",
+    "marks": 57
+  },
+  "924754": {
+    "name": "Molly Baby",
+    "marks": 66
+  },
+  "925121": {
+    "name": "P T Thomas",
+    "marks": 86
+  },
+  "925329": {
+    "name": "Babu K P",
+    "marks": 54
+  },
+  "925896": {
+    "name": "Betsy Johnson",
+    "marks": 70
+  },
+  "926358": {
+    "name": "Susan Varghese",
+    "marks": 61
+  },
+  "927115": {
+    "name": "Leelama Nelson",
+    "marks": 90
+  },
+  "927350": {
+    "name": "Molly Adams",
+    "marks": 84
+  },
+  "930071": {
+    "name": "Lissy James",
+    "marks": 92
+  },
+  "930732": {
+    "name": "Jijy Mani",
+    "marks": 55
+  },
+  "934193": {
+    "name": "Mani P K ",
+    "marks": 54
+  },
+  "935555": {
+    "name": "James Manuel",
+    "marks": 83
+  },
+  "937666": {
+    "name": "K P Mathewkutty",
+    "marks": 65
+  },
+  "939227": {
+    "name": "Mercy Mathew",
+    "marks": 60
+  },
+  "939567": {
+    "name": "P V Benjamin",
+    "marks": 94
+  },
+  "939953": {
+    "name": "Chandralekhan T",
+    "marks": 49
+  },
+  "940685": {
+    "name": "Thankachan A M ",
+    "marks": 42
+  },
+  "941746": {
+    "name": "Sobha Thankachan",
+    "marks": 74
+  },
+  "943132": {
+    "name": "Alice Benjamin",
+    "marks": 89
+  },
+  "945411": {
+    "name": "Aleyamma Baby",
+    "marks": 61
+  },
+  "945541": {
+    "name": "Mary John",
+    "marks": 65
+  },
+  "946373": {
+    "name": "John George",
+    "marks": 93
+  },
+  "946535": {
+    "name": "Alias John",
+    "marks": 71
+  },
+  "946642": {
+    "name": "Mary George",
+    "marks": 74
+  },
+  "947015": {
+    "name": "Aleyamma Joy",
+    "marks": 72
+  },
+  "947632": {
+    "name": "Raichal Babu",
+    "marks": 95
+  },
+  "947936": {
+    "name": "Kunjamma Varghese",
+    "marks": 94
+  },
+  "948300": {
+    "name": "Saleena George",
+    "marks": 67
+  },
+  "949035": {
+    "name": "Susy Babu",
+    "marks": 67
+  },
+  "949149": {
+    "name": "Sali Nelson",
+    "marks": 50
+  },
+  "950114": {
+    "name": "Reena Baby",
+    "marks": 56
+  },
+  "953813": {
+    "name": "Santhosh John",
+    "marks": 86
+  },
+  "954088": {
+    "name": "Shiji Shaju",
+    "marks": 76
+  },
+  "956099": {
+    "name": "Joice George",
+    "marks": 44
+  },
+  "957320": {
+    "name": "Annamma Paul",
+    "marks": 56
+  },
+  "957559": {
+    "name": "Jeena Saju",
+    "marks": 76
+  },
+  "957973": {
+    "name": "Kuriachan P U",
+    "marks": 58
+  },
+  "958933": {
+    "name": "Mathaikunju N V",
+    "marks": 49
+  },
+  "959803": {
+    "name": "Krishnan C K",
+    "marks": 32
+  },
+  "960206": {
+    "name": "Sini Johnson",
+    "marks": 88
+  },
+  "960406": {
+    "name": "Reji Kurian",
+    "marks": 74
+  },
+  "961439": {
+    "name": "Prasanna Mathew",
+    "marks": 38
+  },
+  "962263": {
+    "name": "E S Mathew",
+    "marks": 78
+  },
+  "962651": {
+    "name": "James Chacko",
+    "marks": 61
+  },
+  "964183": {
+    "name": "Suku P K",
+    "marks": 34
+  },
+  "965068": {
+    "name": "Jolly Stanly",
+    "marks": 83
+  },
+  "965362": {
+    "name": "Mary James",
+    "marks": 42
+  },
+  "966556": {
+    "name": "Molly Varghese",
+    "marks": 71
+  },
+  "968137": {
+    "name": "P V Varghese",
+    "marks": 87
+  },
+  "968603": {
+    "name": "Stanly Abraham",
+    "marks": 90
+  },
+  "968759": {
+    "name": "Billy Paul",
+    "marks": 82
+  },
+  "971877": {
+    "name": "P C Benny",
+    "marks": 80
+  },
+  "973400": {
+    "name": "Benny C Kuriakose",
+    "marks": 77
+  },
+  "975574": {
+    "name": "Binila Sunil",
+    "marks": 59
+  },
+  "976885": {
+    "name": "Joyce Benny",
+    "marks": 69
+  },
+  "977513": {
+    "name": "Reena Bennet",
+    "marks": 77
+  },
+  "978686": {
+    "name": "Gladi C Thomas",
+    "marks": 77
+  },
+  "978827": {
+    "name": "Ani Thomas",
+    "marks": 69
+  },
+  "980805": {
+    "name": "Ammini Velayudhan",
+    "marks": 73
+  },
+  "984096": {
+    "name": "Santhosh K K",
+    "marks": 34
+  },
+  "984588": {
+    "name": "Joy Lawrence",
+    "marks": 76
+  },
+  "986663": {
+    "name": "O S Chandran",
+    "marks": 42
+  },
+  "988255": {
+    "name": "Ailiyama Mathai",
+    "marks": 46
+  },
+  "988649": {
+    "name": "Santha Chandran",
+    "marks": 44
+  },
+  "988945": {
+    "name": "Lekshmi K K",
+    "marks": 78
+  },
+  "988994": {
+    "name": "Shaijy Lawrance",
+    "marks": 31
+  },
+  "993008": {
+    "name": "Santhakumary Mathew",
+    "marks": 74
+  },
+  "993483": {
+    "name": "Thresiamma Jose",
+    "marks": 76
+  },
+  "996143": {
+    "name": "Alex Verghese",
+    "marks": 52
+  },
+  "997952": {
+    "name": "Anne George",
+    "marks": 82
+  },
+  "998317": {
+    "name": "Shirley Shaji",
+    "marks": 91
+  },
+  "998761": {
+    "name": "Jayananda S",
+    "marks": 65
+  },
+  "998947": {
+    "name": "Finny Daniel",
+    "marks": 73
+  },
+  "999346": {
+    "name": "Anu Mable Thomas",
+    "marks": 40
+  },
+  "999931": {
+    "name": "Aleyama Thomas",
+    "marks": 51
+  }
+};
+
+   function showResult() {
+      const code = document.getElementById("codeInput").value.trim();
+      const resultDiv = document.getElementById("result");
+      const actions = document.getElementById("actions");
+
+      if (data[code]) {
+        const person = data[code];
+        const message =
+          `Congratulations ${person.name}!\n\n` +
+          `Thank you for attending SBS Bible Quiz 2025 and showing your enthusiasm and dedication in learning and applying the truths of the Holy Scriptures.\n\n` +
+          `You have obtained: ${person.marks}/100\n\n` +
+          `We pray that this effort strengthens your walk with the Lord.\n\n` +
+          `With Prayers & Blessings,\nSUVISESHAKAN BALA SANGHAM\nVALAKOM CENTRE`;
+
+        resultDiv.innerText = message;
+        resultDiv.style.display = "block";
+        actions.style.display = "block";
+      } else {
+        resultDiv.innerText = "Code not found. Please check your code and try again.";
+        resultDiv.style.display = "block";
+        actions.style.display = "none";
+      }
+    }
+
+    function downloadResult() {
+      const text = document.getElementById("result").innerText;
+      const blob = new Blob([text], { type: "text/plain" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "SBS_Bible_Quiz_Result.txt";
+      link.click();
+    }
+
+    function printResult() {
+  const text = document.getElementById("result").innerText;
+  const printWindow = window.open("", "", "width=800,height=600");
+  printWindow.document.write("<pre style='font-family: Arial, sans-serif; white-space: pre-wrap;'>" + text + "</pre>");
+  printWindow.document.close();
+  printWindow.focus();
+  printWindow.print();
+}
+
+  </script>
+</body>
+</html>
